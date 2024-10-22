@@ -1,5 +1,5 @@
- <H3>ENTER YOUR NAME</H3>
-<H3>ENTER YOUR REGISTER NO.</H3>
+ <H3>ENTER YOUR NAME:praveen ck</H3>
+<H3>ENTER YOUR REGISTER NO:212222243003</H3>
 <H3>EX. NO.8</H3>
 <H3>DATE:</H3>
 <H1 ALIGN =CENTER>Implementation of Speech Recognition</H1>
@@ -22,9 +22,31 @@ Step 11: Perform speech recognition with exceptional handling:<Br>
 •	A generic exception block captures any other unexpected errors.<Br>
 <H3>Program:</H3>
 
-Insert your code her
+```
+import speech_recognition as sr
+# initialize the reconizer
+r=sr.Recognizer()
+# set duration for the audio
+duration=15 # second=
+# record audio
+print("say somthing:")
+
+with sr.Microphone() as source:
+    audio_date=r.listen(source,timeout=duration)
+try:
+    text=r.recognize_google(audio_date)
+    print("you said:",text)
+except sr.UnknownValueError:
+    print("sorry ,could not undersand audio")
+except sr.RequestError as e:
+    print(f'Error with the request to google speech recognation service:{e}')
+except Exception as e:
+    print(f'Error:{e}')
+```
 
 <H3> Output:</H3>
-Show the results here
+
+![327986834-7361e764-437a-4aea-87b7-22e0f4dcff35](https://github.com/Bala1511/Ex-8--AAI/assets/118680410/348b8af8-7ac4-45d8-87db-008610b645e0)
 
 <H3> Result:</H3>
+Thus, we have implemented a program that will transcribe the audio file in the file variable and print the transcribed text on the console, one line at a time.
